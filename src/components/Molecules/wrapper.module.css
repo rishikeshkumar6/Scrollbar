@@ -1,0 +1,31 @@
+.parent{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    border: 1px solid black;
+    width: 70%;
+    height: 50vh;
+   overflow-x: scroll;
+   margin: 100px 0px 0px 190px;
+}
+
+.child{
+    display: flex; 
+   flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid black;
+    width: 150px;
+    height: 200px;  */
+    background-color: red;
+    min-height: 90%;
+    min-width: 30%;
+    border-radius: 12px;
+    margin-right: 2rem;
+}
+p{
+    font-size: 1rem;
+}
+img{
+    border-radius: 55px;
+}

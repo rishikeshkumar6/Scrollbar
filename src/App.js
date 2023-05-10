@@ -1,24 +1,26 @@
 import logo from './logo.svg';
 import './App.css';
+import {useState,useEffect} from 'react'
+import { Slider } from './components/Molecules/wrapper';
+import axios from 'axios';
 
 function App() {
+  const [data,setdata]=useState([])
+  
+
+  useEffect(()=>{
+    async function userData(){
+      const response=await axios.get("https://reqres.in/api/users/")
+     setdata(response.data.data)
+    }
+    userData()
+  },[])
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+     <Slider user={data}/>
+    
     </div>
+
   );
 }
 
